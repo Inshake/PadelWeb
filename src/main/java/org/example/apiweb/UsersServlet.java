@@ -1,14 +1,16 @@
 package org.example.apiweb;
 
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Vector;
 import java.util.List;
+import dao.JugadorDAO;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import models.Jugador;
 
 
 @WebServlet(name = "userServlet", value = "/users")
@@ -24,17 +26,13 @@ public class UsersServlet extends HttpServlet {
 
         try {
 
-            String accion = request.getParameter("accion");
-
-            if(accion.equals("bienvenida")){
-                request.getRequestDispatcher("bienvenida.jsp").forward(request, response);
-
-            } else {
-
-
-
-        request.getRequestDispatcher("usuarios.jsp").forward(request, response);
-            }
+            List<String> nombres = new ArrayList<>();
+            Vector<Jugador> jugadores = new JugadorDAO().listarJugadores();
+            jugadores.forEach(jugador -> {
+                nombres.add(jugador.getNombre() + " " + jugador.getApellido());
+            });
+            request.setAttribute("listaJugadores", nombres);
+            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -43,34 +41,7 @@ public class UsersServlet extends HttpServlet {
 
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 
-        try {
-
-
-
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String password = request.getParameter("password");
-
-
-        // guardar el usuario en la base de datos
-
-        // mostrar mensaje de bienvenida
-
-
-        request.setAttribute("exito", true);
-        request.setAttribute("nombreUsuario", nombre.toUpperCase());
-
-        request.getSession().setAttribute("logueado", nombre);
-
-        request.getRequestDispatcher("registro.jsp?exito=true").forward(request, response);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
     public void destroy() {
     }

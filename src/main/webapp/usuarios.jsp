@@ -1,22 +1,16 @@
 <%@ page import="java.util.List" %>
-<h1>${mensajeBienvenida}</h1>
 
 <%
-
-    List<String> nombres = (List<String>) request.getAttribute("lista");
-
-    HttpSession sesion = (HttpSession) request.getSession();
-
-
-
+    List<String> nombres = (List<String>) request.getAttribute("listaJugadores");
 %>
 
-<body>
-
-<%@include file="WEB-INF/components/header.jsp"%>
-
-
-<h1>Bievenido <% sesion.getAttribute("logueado"); %>}</h1>
-
-
-</body>
+<h1>Lista de Jugadores</h1>
+<ul>
+    <% if (nombres != null) {
+        for (String nombre : nombres) { %>
+    <li><%= nombre %></li>
+    <%  }
+    } else { %>
+    <li>No hay jugadores disponibles.</li>
+    <% } %>
+</ul>
