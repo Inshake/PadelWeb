@@ -1,33 +1,32 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+<form class="login-form" action="login" method="post">
+    <h1>Login</h1>
+    <img src="${pageContext.request.contextPath}/img/IconoPadel.png" alt="iconoPadel">
 
+    <div class="form-input-material">
+        <input type="text" name="cedula" id="cedula" placeholder="Cédula" autocomplete="off" required />
+    </div>
 
-<%
+    <div class="form-input-material">
+        <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" autocomplete="off" required />
+    </div>
 
+    <button type="submit" class="btn btn-primary btn-ghost">Enviar</button>
 
-    String nombreUsuario = (String) request.getAttribute("nombreUsuario");
+    <p style="color:red">${errorLogin}</p>
 
-%>
-
-<h1>Bievenido<%=nombreUsuario%></h1>
-
-
-
-
-
-<form action="users" method="post" >
-
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre">
-
-    <br>
-
-    <label for="apellido">Apellido</label>
-    <input type="text" id="apellido" name="apellido">
-
-    <br>
-
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
-
-    <button type="submit">Enviar</button>
-
+    <p>¿No tienes cuenta?
+        <a href="registro.jsp">Crear cuenta nueva</a>
+    </p>
 </form>
+</body>
+</html>
