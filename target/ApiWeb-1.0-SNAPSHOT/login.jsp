@@ -8,7 +8,7 @@
     <title>Login</title>
 </head>
 <body>
-<form class="login-form" action="login" method="post">
+<form class="login-form" action="${pageContext.request.contextPath}/login" method="post">
     <h1>Login</h1>
     <img src="${pageContext.request.contextPath}/img/IconoPadel.png" alt="iconoPadel">
 
@@ -25,7 +25,7 @@
     <p style="color:red">${errorLogin}</p>
 
     <p>¿No tienes cuenta?
-        <a href="registro.jsp">Crear cuenta nueva</a>
+        <a href="${pageContext.request.contextPath}/registro.jsp">Crear cuenta nueva</a>
     </p>
 </form>
 </body>
