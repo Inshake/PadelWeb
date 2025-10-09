@@ -15,12 +15,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="${pageContext.request.contextPath}/login">Iniciar sesión</a>
+          </li>
 
 
-        <p> <%= (usuarioEnSesion != null && !usuarioEnSesion.isEmpty() ? "Salir" : "Ingresar") %> </p>
+
+          <p> <%= (usuarioEnSesion != null && !usuarioEnSesion.isEmpty() ? "Salir" : "Ingresar") %> </p>
 
         <p>Visitas ${contador}</p>
 
