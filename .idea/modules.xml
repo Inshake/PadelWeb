@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Proyecto/PMproyecto/PMproyecto.iml" filepath="$PROJECT_DIR$/../../Proyecto/PMproyecto/PMproyecto.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../PadelManager/PadelManager.iml" filepath="$PROJECT_DIR$/../../PadelManager/PadelManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../PadelManager/PadelManager2.iml" filepath="$PROJECT_DIR$/../../PadelManager/PadelManager2.iml" />
     </modules>
