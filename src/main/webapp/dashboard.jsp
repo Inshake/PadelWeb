@@ -12,5 +12,11 @@
 </head>
 <body>
 <h1>Este es el dashboard</h1>
+
+<form action="<%= request.getContextPath() %>/logout" method="get">
+    <button type="submit">Cerrar sesión</button>
+</form>
+
+
 </body>
 </html>
