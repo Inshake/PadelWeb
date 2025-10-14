@@ -1,4 +1,4 @@
-package org.example.apiweb;
+/*package org.example.apiweb;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
@@ -50,3 +50,4 @@ public class AuthFilter implements Filter {
         chain.doFilter(request, response);
     }
 }
+*/

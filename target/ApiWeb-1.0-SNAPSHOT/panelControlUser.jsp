@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
     <!-- Tu hoja de estilos -->
-    <link rel="stylesheet" href="../css/panel.css">
+    <link rel="stylesheet" href="css/panel.css">
 </head>
 <body>
 
