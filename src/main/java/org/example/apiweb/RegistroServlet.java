@@ -26,12 +26,27 @@ public class RegistroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("csrfToken") == null) {
+            String token = java.util.UUID.randomUUID().toString();
+            session.setAttribute("csrfToken", token);
+        }
+
         request.getRequestDispatcher("registro.jsp").forward(request, response);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        String tokenForm = request.getParameter("csrfToken");
+        String tokenSession = (String) request.getSession().getAttribute("csrfToken");
+
+        if (tokenSession == null || !tokenSession.equals(tokenForm)) {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, "CSRF Token inválido");
+            return;
+        }
 
         try {
             // Asegurar codificación UTF-8

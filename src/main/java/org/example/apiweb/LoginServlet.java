@@ -17,9 +17,22 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        HttpSession session = request.getSession(true);
+        String csrfToken = UUID.randomUUID().toString();
+        session.setAttribute("csrfToken", csrfToken);
+
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String csrfTokenSession = (String) req.getSession().getAttribute("csrfToken");
+        String csrfTokenForm = req.getParameter("csrfToken");
+
+        if (csrfTokenSession == null || csrfTokenForm == null || !csrfTokenSession.equals(csrfTokenForm)) {
+            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Solicitud no válida (CSRF detectado)");
+            return;
+        }
         String cedula = req.getParameter("cedula");
         String password = req.getParameter("contrasenia");
 
@@ -47,8 +60,9 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("authUser", usuario);
         session.setMaxInactiveInterval(30 * 60); // 30 minutos
 
-        String csrf = UUID.randomUUID().toString();
-        session.setAttribute("csrf", csrf);
+        String csrfToken = UUID.randomUUID().toString();
+        session.setAttribute("csrfToken", csrfToken);
+
 
         if (usuario.esAdministrador()) {
             resp.sendRedirect(req.getContextPath() + "/dashboard.jsp");
