@@ -9,6 +9,7 @@
 </head>
 <body>
 <form class="login-form" action="${pageContext.request.contextPath}/login" method="post">
+    <input type="hidden" name="csrfToken" value="${sessionScope.csrfToken}">
     <h1>Login</h1>
     <img src="${pageContext.request.contextPath}/img/IconoPadel.png" alt="iconoPadel">
 
