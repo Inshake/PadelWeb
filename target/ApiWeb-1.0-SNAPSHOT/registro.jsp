@@ -9,8 +9,11 @@
 </head>
 <body>
 <form class="login-form" action="${pageContext.request.contextPath}/registro" method="post">
+    <input type="hidden" name="csrfToken" value="${sessionScope.csrfToken}">
+
     <h1>Registro</h1>
     <img src="${pageContext.request.contextPath}/img/IconoPadel.png" alt="iconoPadel">
+
 
     <div class="form-grid">
         <div>
