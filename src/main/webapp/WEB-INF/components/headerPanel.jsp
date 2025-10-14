@@ -15,8 +15,8 @@
     <div class="header">
         <h1>Panel de control</h1>
         <div class="enlaces">
-            <a href="panelControlUser">Usuarios</a>
-            <a href="panelControlCancha">Canchas</a>
+            <a href="<%= request.getContextPath() %>/users">Usuarios</a>
+            <a href="<%= request.getContextPath() %>/cancha">Cancha</a>
         </div>
     </div>
 </div>

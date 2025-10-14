@@ -41,7 +41,7 @@
         <i class="fi fi-rr-basketball fs-1 mb-3"></i>
         <h3>Canchas</h3>
         <p>Consulta y organiza la disponibilidad de canchas.</p>
-        <a href="administrador/panelControlCancha.jsp" class="btn btn-outline-primary mt-2">Ir al panel</a>
+        <a href="<%= request.getContextPath() %>/cancha" class="btn btn-outline-primary mt-2">Ir al panel</a>
     </div>
 </section>
 

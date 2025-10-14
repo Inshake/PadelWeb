@@ -1,4 +1,4 @@
-<%@ page import="java.util.List" %>
+
 
 <%--
 <%
@@ -26,7 +26,7 @@
 <%@ page import="java.util.List" %>
 
 <%
-    List<String> nombres = (List<String>) request.getAttribute("listaJugadores");
+    List<Integer> numeroCancha = (List<Integer>) request.getAttribute("listaCanchas");
 %>
 
 <!DOCTYPE html>
@@ -62,10 +62,10 @@
 
     <div class="listaUser">
         <ul>
-            <% if (nombres != null && !nombres.isEmpty()) {
-                for (String nombre : nombres) { %>
+            <% if (numeroCancha != null && !numeroCancha.isEmpty()) {
+                for (Integer numeroCanchas : numeroCancha) { %>
             <li>
-                <span><%= nombre %></span>
+                <span><%= numeroCanchas %></span>
                 <div>
                     <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
                     <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
