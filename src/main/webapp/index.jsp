@@ -32,7 +32,7 @@
         <i class="fi fi-rr-user fs-1 mb-3"></i>
         <h3>Usuarios</h3>
         <p>Administra tus usuarios, modifica y gestiona sus datos fácilmente.</p>
-        <a href="<%= request.getContextPath() %>/panelControlUser.jsp" class="btn btn-outline-primary mt-2">Ir al panel</a>
+        <a href="<%= request.getContextPath() %>/users" class="btn btn-outline-primary mt-2">Ir al panel</a>
 
 
     </div>

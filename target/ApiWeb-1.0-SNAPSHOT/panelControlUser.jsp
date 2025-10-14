@@ -1,3 +1,10 @@
+<%--<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> --%>
+<%@ page import="java.util.List" %>
+
+<%
+    List<String> nombres = (List<String>) request.getAttribute("listaJugadores");
+%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,54 +38,20 @@
 
     <div class="listaUser">
         <ul>
+            <% if (nombres != null && !nombres.isEmpty()) {
+                for (String nombre : nombres) { %>
             <li>
-                <span>Matías Parente</span>
+                <span><%= nombre %></span>
                 <div>
                     <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
                     <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
                     <button title="Ver"><i class="fi fi-rr-document"></i></button>
                 </div>
             </li>
-            <li>
-                <span>Matías Parente</span>
-                <div>
-                    <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
-                    <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
-                    <button title="Ver"><i class="fi fi-rr-document"></i></button>
-                </div>
-            </li>
-            <li>
-                <span>Matías Parente</span>
-                <div>
-                    <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
-                    <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
-                    <button title="Ver"><i class="fi fi-rr-document"></i></button>
-                </div>
-            </li>
-            <li>
-                <span>Matías Parente</span>
-                <div>
-                    <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
-                    <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
-                    <button title="Ver"><i class="fi fi-rr-document"></i></button>
-                </div>
-            </li>
-            <li>
-                <span>Matías Parente</span>
-                <div>
-                    <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
-                    <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
-                    <button title="Ver"><i class="fi fi-rr-document"></i></button>
-                </div>
-            </li>
-            <li>
-                <span>Matías Parente</span>
-                <div>
-                    <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
-                    <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>
-                    <button title="Ver"><i class="fi fi-rr-document"></i></button>
-                </div>
-            </li>
+            <%  }
+            } else { %>
+            <li>No hay usuarios disponibles.</li>
+            <% } %>
         </ul>
     </div>
 </div>
