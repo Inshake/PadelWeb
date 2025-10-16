@@ -150,3 +150,44 @@ body {
     font-size: 14px;
     border-top: 1px solid #ccc;
 }
+
+/* MINI CARDS PARA ADMIN */
+.mini-card {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.mini-card:hover {
+    transform: translateY(-4px);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.mini-card h4 {
+    font-size: 16px;
+    color: #00b95e;
+    margin-bottom: 10px;
+}
+
+.metric {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Tarjetas de comentarios */
+.card p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card h6 {
+    font-size: 14px;
+    color: #555;
+}
