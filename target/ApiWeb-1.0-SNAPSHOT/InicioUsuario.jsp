@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio Usuario - PadelManager</title>
+    <title>Inicio Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
@@ -15,46 +15,49 @@
 
 <%@include file="/WEB-INF/components/headerUsuario.jsp"%>
 
-<main class="hero text-center py-5">
+<main class="hero text-center py-5 bg-light">
     <div class="hero-content container">
         <h2 class="tituloPrincipal mb-3">¡Bienvenido jugador!</h2>
         <p class="lead mb-4">
-            Consulta tus reservas, estadísticas personales y próximos torneos.
+            Consulta tus reservas, estadísticas personales y canchas disponibles.
         </p>
     </div>
 </main>
 
-<section class="links container my-5 d-flex justify-content-center gap-4 flex-wrap">
-    <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
-        <i class="fi fi-rr-basketball fs-1 mb-3"></i>
-        <h3>Tus Reservas</h3>
-        <p>Visualiza y gestiona tus reservas activas y pasadas.</p>
-        <a href="reservasUsuario.jsp" class="btn btn-outline-primary mt-2">Ver reservas</a>
-    </div>
-
-    <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
-        <i class="fi fi-rr-chart-histogram fs-1 mb-3"></i>
-        <h3>Estadísticas</h3>
-        <p>Consulta tu rendimiento, partidos jugados y evolución general.</p>
-        <a href="estadisticasUsuario.jsp" class="btn btn-outline-primary mt-2">Ver estadísticas</a>
+<!-- 🔹 Bloque de estadísticas personales -->
+<section class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 text-center p-4" style="border-radius: 1rem;">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <i class="fi fi-rr-calendar-check fs-2 text-primary me-2"></i>
+                    <h4 class="mb-0">Tus estadísticas</h4>
+                </div>
+                <p class="fs-5 mb-1">Reservas activas:</p>
+                <h3 class="fw-bold text-success">
+                    <%= request.getAttribute("reservasActivas") != null
+                            ? request.getAttribute("reservasActivas")
+                            : 0 %>
+                </h3>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="container my-5">
-    <h3 class="text-center mb-4">Noticias y Novedades</h3>
-    <div class="row justify-content-center">
-        <div class="col-md-4 mb-3">
-            <div class="card p-3 shadow-sm h-100">
-                <h5>Torneo Primavera 2025</h5>
-                <p>¡Inscríbete al nuevo torneo local y demuestra tu nivel!</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card p-3 shadow-sm h-100">
-                <h5>Mejora tu juego</h5>
-                <p>Consejos de entrenamiento y táctica cada semana en nuestro blog.</p>
-            </div>
-        </div>
+<!-- 🔹 Sección de accesos -->
+<section class="links container my-5 d-flex justify-content-center gap-4 flex-wrap">
+    <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
+        <i class="fi fi-rr-user fs-1 mb-3 text-primary"></i>
+        <h3>Usuarios</h3>
+        <p>Administra tu cuenta o actualiza tus datos personales.</p>
+        <a href="<%= request.getContextPath() %>/users" class="btn btn-outline-primary mt-2">Ir al panel</a>
+    </div>
+
+    <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
+        <i class="fi fi-rr-basketball fs-1 mb-3 text-success"></i>
+        <h3>Canchas</h3>
+        <p>Consulta la disponibilidad de canchas y realiza reservas.</p>
+        <a href="<%= request.getContextPath() %>/cancha" class="btn btn-outline-primary mt-2">Ir al panel</a>
     </div>
 </section>
 
@@ -66,3 +69,4 @@
 
 </body>
 </html>
+

@@ -32,19 +32,19 @@
     <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
         <i class="fi fi-rr-chart-histogram fs-1 mb-3"></i>
         <h3>Reservas históricas</h3>
-        <p>Más de <strong>—</strong> reservas realizadas desde el inicio de la plataforma.</p>
+        <p>Más de <strong><%= request.getAttribute("totalReservas") %></strong> reservas realizadas desde el inicio de la plataforma.</p>
     </div>
 
     <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
         <i class="fi fi-rr-basketball fs-1 mb-3"></i>
         <h3>Canchas registradas</h3>
-        <p>Actualmente contamos con <strong>—</strong> canchas activas en el sistema.</p>
+        <p>Actualmente contamos con <strong><%= request.getAttribute("totalCanchas") %></strong> canchas activas en el sistema.</p>
     </div>
 
     <div class="link-card card p-4 text-center shadow-sm" style="width: 18rem;">
         <i class="fi fi-rr-users fs-1 mb-3"></i>
         <h3>Usuarios activos</h3>
-        <p>Hay <strong>—</strong> jugadores disfrutando del sistema PadelManager.</p>
+        <p>Hay <strong><%= request.getAttribute("totalUsuarios") %></strong> jugadores disfrutando del sistema PadelManager.</p>
     </div>
 </section>
 

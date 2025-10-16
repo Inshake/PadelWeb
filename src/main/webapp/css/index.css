@@ -191,3 +191,14 @@ body {
     font-size: 14px;
     color: #555;
 }
+
+#chartReservas, #chartCanchas {
+    background: transparent; 
+    box-shadow: none;
+}
+
+section h4 {
+    color: #00b95e;
+    font-weight: 600;
+}
+

@@ -26,7 +26,7 @@
 <%@ page import="java.util.List" %>
 
 <%
-    List<String> nombres = (List<String>) request.getAttribute("listaJugadores");
+    List<Integer> numeroCancha = (List<Integer>) request.getAttribute("listaCanchas");
 %>
 
 <!DOCTYPE html>
@@ -36,13 +36,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de control</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Flaticon Icons -->
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
-    <!-- Tu hoja de estilos -->
     <link rel="stylesheet" href="css/panel.css">
 </head>
 <body>
@@ -62,10 +59,10 @@
 
     <div class="listaUser">
         <ul>
-            <% if (nombres != null && !nombres.isEmpty()) {
-                for (String nombre : nombres) { %>
+            <% if (numeroCancha != null && !numeroCancha.isEmpty()) {
+                for (Integer numeroCanchas : numeroCancha) { %>
             <li>
-                <span><%= nombre %></span>
+                <span><%= numeroCanchas %></span>
                 <div>
                     <button title="Eliminar"><i class="fi fi-rr-trash"></i></button>
                     <button title="Editar"><i class="fi fi-rr-user-pen"></i></button>

@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio Usuario - PadelManager</title>
+    <title>Inicio Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
@@ -57,7 +57,7 @@
         <i class="fi fi-rr-basketball fs-1 mb-3 text-success"></i>
         <h3>Canchas</h3>
         <p>Consulta la disponibilidad de canchas y realiza reservas.</p>
-        <a href="administrador/panelControlCancha.jsp" class="btn btn-outline-success mt-2">Ir al panel</a>
+        <a href="<%= request.getContextPath() %>/cancha" class="btn btn-outline-primary mt-2">Ir al panel</a>
     </div>
 </section>
 
