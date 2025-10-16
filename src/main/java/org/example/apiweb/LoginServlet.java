@@ -65,9 +65,10 @@ public class LoginServlet extends HttpServlet {
 
 
         if (usuario.esAdministrador()) {
-            resp.sendRedirect(req.getContextPath() + "/dashboard.jsp");
+            resp.sendRedirect(req.getContextPath() + "/inicioAdministrador"); // servlet admin
         } else {
-            resp.sendRedirect(req.getContextPath() + "/users");
+            resp.sendRedirect(req.getContextPath() + "/inicioUsers"); // servlet usuario
         }
+
     }
 }
